@@ -1,0 +1,22 @@
+{
+    "name": "diagro/lib_php_chart",
+    "description": "Library for creating ChartJS in PHP.",
+    "type": "library",
+    "version": "1.0",
+    "require": {
+        "php": "^8.0",
+        "ext-json": "*"
+    },
+    "license": "Diagro",
+    "autoload": {
+        "psr-4": {
+            "Diagro\\Chart\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Stijn Leenknegt",
+            "email": "stijn@diagro.be"
+        }
+    ]
+}
