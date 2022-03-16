@@ -11,7 +11,16 @@ class Dataset implements ArrayAccess, JsonSerializable
     use JsonPropertiesTrait;
 
 
+    /**
+     * Chart types
+     */
+    const TYPE_LINE     = 'line';
+    const TYPE_BAR      = 'bar';
+
+
     public string $label;
+
+    public ?string $type = null;
 
     /**
      * @var int|Clip|null
@@ -33,9 +42,10 @@ class Dataset implements ArrayAccess, JsonSerializable
     public Options $options;
 
 
-    public function __construct(string $label)
+    public function __construct(string $label, ?string $type = null)
     {
         $this->label = $label;
+        $this->type = $type;
 
         //set global options to null objects.
         $this->options = new Options();
