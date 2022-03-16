@@ -28,9 +28,9 @@ class Chart implements JsonSerializable
     public string $id;
 
     /**
-     * @var string
+     * @var string|null
      */
-    public string $type;
+    public ?string $type = null;
 
     /**
      * @var string[]
@@ -48,7 +48,7 @@ class Chart implements JsonSerializable
     public Options $options;
 
 
-    public function __construct(string $id, string $type)
+    public function __construct(string $id, ?string $type = null)
     {
         $this->id = $id;
         $this->type = $type;
@@ -139,7 +139,7 @@ class Chart implements JsonSerializable
 
     public function addDataset(Dataset $dataset) : self
     {
-        $this->datasets[$dataset->label] = $dataset;
+        $this->datasets[] = $dataset;
         return $this;
     }
 
