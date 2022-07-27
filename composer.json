@@ -2,7 +2,7 @@
     "name": "diagro/lib_php_chart",
     "description": "Library for creating ChartJS in PHP.",
     "type": "library",
-    "version": "1.3",
+    "version": "1.3.1",
     "require": {
         "php": "^8.1",
         "ext-json": "*",
@@ -19,5 +19,12 @@
             "name": "Stijn Leenknegt",
             "email": "stijn@diagro.be"
         }
-    ]
+    ],
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Diagro\\Chart\\DiagroServiceProvider"
+            ]
+        }
+    }
 }
