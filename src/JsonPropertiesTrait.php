@@ -1,6 +1,7 @@
 <?php
 namespace Diagro\Chart;
 
+use Illuminate\Support\Str;
 use Stringable;
 
 trait JsonPropertiesTrait
@@ -24,24 +25,11 @@ trait JsonPropertiesTrait
                 } elseif(is_array($value) && count($value) == 0) {
                     continue;
                 }
-                $json[$this->camelizeNotFirst($name)] = $value;
+                $json[Str::camel($name)] = $value;
             }
         }
 
         return $json;
-    }
-
-
-    private function camelizeNotFirst(string $str) : string
-    {
-        $str = strtolower($str);
-        $parts = explode('_', $str);
-        $new_str = $parts[0];
-        $c = count($parts);
-        if($c > 1) {
-            for($i = 1 ; $i < $c ; $i++) $new_str .= ucfirst($parts[$i]);
-        }
-        return $str;
     }
 
 
