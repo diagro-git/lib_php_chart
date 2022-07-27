@@ -17,7 +17,7 @@ class Hex extends Color
     public function __toString() : string
     {
         $str = $this->hex;
-        if(strpos($str, '#') === false) {
+        if(! str_contains($str, '#')) {
             $str = '#' . $str;
         }
 

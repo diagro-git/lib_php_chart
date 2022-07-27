@@ -56,7 +56,7 @@ class Line extends Dataset
      * @Scriptable
      * @var null|Color|string
      */
-    public $borderColor = null;
+    public $border_color = null;
 
     /**
      * @Scriptable
