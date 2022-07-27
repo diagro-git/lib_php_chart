@@ -19,8 +19,6 @@ class Manager implements ArrayAccess
             $json = json_encode($this[$id]);
             //https://stackoverflow.com/a/15953991/356691
             $json = preg_replace('/,\s*"[^"]+":null|"[^"]+":null,?/', '', $json);
-            //new version null?
-            $json = preg_replace('/s:\d+:"\w+";N;/', '', $json);
             $chart_data = base64_encode($json);
             return '<div style="width:' . $width . $width_unit . ';height:' . $height . $height_unit . ';"><canvas id="chart_' . $id . '" data-chart="' . $chart_data . '"></canvas></div>';
         }
